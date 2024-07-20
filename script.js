@@ -1,5 +1,6 @@
 const minuteHand = document.getElementById("minute-hand");
 const hourHand = document.getElementById("hour-hand");
+const secondHand = document.getElementById("second-hand");
 
 function clockTick() {
     const date = new Date();
@@ -7,6 +8,7 @@ function clockTick() {
     const minutes = (seconds + date.getMinutes()) / 60;
     const hours = (minutes + date.getHours()) / 12;
 
+    rotateClockHand(secondHand, seconds);
     rotateClockHand(minuteHand, minutes);
     rotateClockHand(hourHand, hours);
 }
